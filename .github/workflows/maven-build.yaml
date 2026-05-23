@@ -31,7 +31,11 @@ jobs:
         with:
           name: targetJar
       - name: Display structure of downloaded files
-        run: ls -R
+        run: |
+          ls -R
+          mkdir target
+          mv *.jar target/
+          ls -R
       - name: Build and publish a Docker image for ${{ github.repository }}
         uses: macbre/push-to-ghcr@master
         with:
