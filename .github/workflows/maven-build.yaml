@@ -1,5 +1,5 @@
 name: Build CI
-to:
+on:
   workflow_dispatch:
 
 jobs:
