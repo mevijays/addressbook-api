@@ -20,14 +20,14 @@ public interface UserAddressRepository extends JpaRepository<UserAddress, Long> 
      * @param keyword the search keyword
      * @return list of matching addresses
      */
-    @Query("SELECT u FROM UserAddress u WHERE " +
-            "LOWER(u.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.phone) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.street) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.city) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.state) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
-            "LOWER(u.country) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+    @Query("SELECT u FROM UserAddress u WHERE "
+            + "LOWER(u.name) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.phone) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.email) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.street) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.city) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.state) LIKE LOWER(CONCAT('%', :keyword, '%')) OR "
+            + "LOWER(u.country) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<UserAddress> searchByKeyword(@Param("keyword") String keyword);
 
     /**

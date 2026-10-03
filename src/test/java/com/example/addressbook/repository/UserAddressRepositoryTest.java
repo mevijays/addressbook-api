@@ -56,7 +56,7 @@ class UserAddressRepositoryTest {
 
         List<UserAddress> results = repository.searchByKeyword("John");
         assertThat(results).hasSize(1);
-        assertThat(results.get(0).getName()).isEqualTo("John Smith");
+        assertThat(results.getFirst().getName()).isEqualTo("John Smith");
 
         results = repository.searchByKeyword("York");
         assertThat(results).hasSize(1);
@@ -74,7 +74,7 @@ class UserAddressRepositoryTest {
 
         List<UserAddress> results = repository.findByNameContainingIgnoreCase("alice");
         assertThat(results).hasSize(1);
-        assertThat(results.get(0).getName()).isEqualTo("Alice Johnson");
+        assertThat(results.getFirst().getName()).isEqualTo("Alice Johnson");
     }
 
     @Test
