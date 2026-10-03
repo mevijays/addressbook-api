@@ -138,7 +138,7 @@ class UserAddressServiceTest {
             List<UserAddressDTO> result = service.getAll();
 
             assertThat(result).hasSize(2);
-            assertThat(result.get(0).getName()).isEqualTo("John Doe");
+            assertThat(result.getFirst().getName()).isEqualTo("John Doe");
             assertThat(result.get(1).getName()).isEqualTo("Jane Doe");
         }
     }
@@ -214,7 +214,7 @@ class UserAddressServiceTest {
             List<UserAddressDTO> result = service.search("John");
 
             assertThat(result).hasSize(1);
-            assertThat(result.get(0).getName()).isEqualTo("John Doe");
+            assertThat(result.getFirst().getName()).isEqualTo("John Doe");
         }
 
         @Test
